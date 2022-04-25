@@ -1,22 +1,28 @@
 import java.util.Scanner;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class SubstringComparisons {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        String str = scanner.nextLine();
-        int number = scanner.nextInt();
-
-
-    }
-    public static String getSmallestAndLargest(String s, int k) {
+        String s = scanner.nextLine();
+        int k = scanner.nextInt();
+        String[] subs;
+        if (s.length() - k -1  > 0) {
+             subs = new String[s.length() - k - 1];
+        }else {
+            subs = new String[s.length()];
+        }
         String smallest = "";
         String largest = "";
 
-        // Complete the function
-        // 'smallest' must be the lexicographically smallest substring of length 'k'
-        // 'largest' must be the lexicographically largest substring of length 'k'
-
-        return smallest + "\n" + largest;
+        SortedSet<String> sets = new TreeSet<>();
+        for (int i = 0;i<= s.length()-k; i++){
+            sets.add(s.substring(i,i+k));
+        }
+        System.out.println(sets.first());
+        System.out.println(sets.last());
     }
+
 }

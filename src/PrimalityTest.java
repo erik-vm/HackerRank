@@ -10,11 +10,7 @@ public class PrimalityTest {
         String n = bufferedReader.readLine();
         bufferedReader.close();
 
-        BigInteger bigInteger = new BigInteger(n);
-        if (bigInteger.isProbablePrime(Integer.parseInt(n))){
-            System.out.println("prime");
-        }else {
-            System.out.println("not prime");
-        }
+        BigInteger number = new BigInteger(n);
+        System.out.print(number.isProbablePrime(1) ? "prime": "not prime");
     }
 }
